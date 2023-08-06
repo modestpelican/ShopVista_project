@@ -13,7 +13,7 @@
         <!-- Load the texture for the walls -->
         <img id="wallTexture" src="textures/wall.avif">
         <!-- Load the texture for the outer ground -->
-        <img id="concreteGround" src="textures/concrete_ground.jpeg">
+        <img id="concreteGround" src="textures/malloutgrnd5.jpg">
     </a-assets>
 
     <!--sky-->
@@ -22,6 +22,9 @@
     <!--outer ground-->
     <a-plane src="#concreteGround" position="0 -1.426 0" rotation="-90 0 0" scale="1500 1500 1500" repeat="10 10"></a-plane>
 
+    <!--bushes-->
+    <a-gltf-model position="8.928 -15.979 -17.503" rotation="0 0 0" src="3d_models/bush.glb" scale="0.087 0.065 0.050"></a-gltf-model>
+    <a-gltf-model position="-8.967 -15.979 -16.653" rotation="0 0 0" src="3d_models/bush.glb" scale="0.087 0.065 0.050"></a-gltf-model>
 
     <!--escalators for first floor-->
     <a-gltf-model position="3.148 -0.051 3.374" rotation="0 -180 0" src="3d_models/scene.glb" scale="0.01 0.01 0.01"></a-gltf-model>
@@ -172,8 +175,6 @@
     <a-gltf-model position="-12.179 -0.040 -1.500" rotation="0 90 0" scale="0.300 0.410 0.310" src="3d_models/shopseat.glb" ></a-gltf-model>
     <a-gltf-model position="-12.179 -0.040 -0.908" rotation="0 90 0" scale="0.300 0.410 0.310" src="3d_models/shopseat.glb" ></a-gltf-model>
     <a-gltf-model position="-12.179 -0.040 -2.586" rotation="0 90 0" scale="0.300 0.410 0.310" src="3d_models/shopseat.glb" ></a-gltf-model>
-
-    
 
     <!--shoes-->
     <!--left up-->
@@ -452,12 +453,12 @@
     <!--flower ceiling lights-->
     <a-gltf-model position="-12.42 4.904 8.473" rotation="0 0 0" scale="1 1 1" src="flower_ceiling_light.glb"></a-gltf-model>
     <a-gltf-model position="-8.859 4.906 12.440" rotation="0 0 0" scale="1 1 1" src="flower_ceiling_light.glb"></a-gltf-model>
-    
+
     <!--applelogo-->
     <a-gltf-model position="-10.579 4.085 9.254" rotation="0 90 0" scale="0.080 0.090 0.020" src="3d_models/apple_logo.glb"></a-gltf-model>
 
     <!--camera positioning-->
-    <a-entity id="rig" position="0 3.0 -30" rotation="0 180 0">
+    <a-entity id="rig" position="0 3.0 -50" rotation="0 180 0">
         <a-camera id="camera"></a-camera>
     </a-entity>
 
