@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Virtual Shopping Mall with A-Frame</title>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+</head>
+<body>
+<a-scene>
+    <a-camera position="0 2 -10" rotation="0 -270 0"></a-camera>
+    <a-assets>
+        <!-- Load the texture for the ground -->
+        <img id="groundTexture" src="textures/texture.avif">
+        <!-- Load the texture for the walls -->
+        <img id="wallTexture" src="textures/wall.avif">
+        <!-- Load the texture for the outer ground -->
+        <img id="concreteGround" src="textures/concrete_ground.jpeg">
+    </a-assets>
+
+    <!--sky-->
+    <a-sky src="textures/panoramic_sky.jpeg" theta-length="90"></a-sky>
+
+    <!--outer ground-->
+    <a-plane src="#concreteGround" position="0 -1.426 0" rotation="-90 0 0" scale="1500 1500 1500" repeat="10 10"></a-plane>
+
+
+    <!--escalators for first floor-->
+    <a-gltf-model position="3.148 -0.051 3.374" rotation="0 -180 0" src="3d_models/scene.glb" scale="0.01 0.01 0.01"></a-gltf-model>
+    <a-gltf-model position="-3.148 -0.051 3.374" rotation="0 -180 0" src="3d_models/scene.glb" scale="0.01 0.01 0.01"></a-gltf-model>
+
+    <!--fountain-->
+    <a-gltf-model position="0 0 0" rotation="0 0 0" src="3d_models/horse fountain.glb" scale="2 2 2"></a-gltf-model>
+
+    <!--glass wall-->
+    <a-gltf-model position="9.534 0 -14.55" rotation="0 0 0" src="3d_models/glasswall.glb" scale="0.145 0.12 0.100"></a-gltf-model>
+    <a-gltf-model position="-8.359 0 -14.55" rotation="0 0 0" src="3d_models/glasswall.glb" scale="0.145 0.12 0.100"></a-gltf-model>
+
+    <!--stairs-->
+    <a-gltf-model position="-2.733 -0.979 -18.000" rotation="0 90 0" scale="1 1 1" src="3d_models/steps.glb"></a-gltf-model>
+
+    <!--entry gate-->
+    <a-gltf-model position="0 0 -15" rotation="0 -180 0" scale="0.5 2.18 0.5" src="3d_models/entry.glb"></a-gltf-model>
+
+    <!--railing on the first floor-->
+    <a-gltf-model position="2.427 2.540 8.552" rotation="0 -180 0" scale="0.036 0.010 0.100" src="3d_models/railing.glb"></a-gltf-model>
+    <a-gltf-model position="8.466 2.540 8.552" rotation="0 -180 0" scale="0.034 0.010 0.100" src="3d_models/railing.glb"></a-gltf-model>
+    <a-gltf-model position="-3.836 2.540 8.552" rotation="0 -180 0" scale="0.030 0.010 0.100" src="3d_models/railing.glb"></a-gltf-model>
+    <a-gltf-model position="-8.558 2.540 8.836 " rotation="0 90 0" scale="0.099 0.010 0.100" src="3d_models/railing.glb"></a-gltf-model>
+    <a-gltf-model position="8.720 2.540 8.836 " rotation="0 90 0" scale="0.099 0.010 0.100" src="3d_models/railing.glb"></a-gltf-model>
+    <a-gltf-model position="14.974 2.530 -6.789" rotation="0 -180 0" scale="0.042 0.010 0.100" src="3d_models/railing.glb"></a-gltf-model>
+    <a-gltf-model position="-8.308 2.530 -6.789" rotation="0 -180 0" scale="0.043 0.010 0.100" src="3d_models/railing.glb"></a-gltf-model>
+
+
+    <!--create the ground with texture-->
+    <a-plane src="#groundTexture" position="0 0 0" rotation="-90 0 0" scale = "30 30 30" repeat="10 10"></a-plane>
+
+    <!-- Create walls around the ground -->
+    <!--<a-plane src="#wallTexture" position="0 2.5 -15" scale = "30 5 30"></a-plane>-->
+    <a-box src="#wallTexture" position="15 2.5 0" rotation="0 -90 0" scale = "30 15 0.5"></a-box>
+    <a-box src="#wallTexture" position="0 2.5 15" rotation="0 180 0" scale = "30 15 0.5"></a-box>
+    <a-box src="#wallTexture" position="-15 2.5 0" rotation="0 90 0" scale = "30 15 0.5"></a-box>
+    
+    <!--first floor-->
+    <a-box src="#groundTexture" position="0 2.675 11.669" rotation="-90 0 0" depth="0.06" height="6.7" width="30" repeat="10 10"></a-box>
+    <a-box src="#groundTexture" position="11.669 2.614 0.751" rotation="90 -90 0" scale="0.510 1.000 1.000" depth="0.170" height="6.7" width="30" repeat="10 10"></a-box>
+    <a-box src="#groundTexture" position="-11.669 2.540 0.803" rotation="90 -90 0" scale="0.500 1.000 1.000" depth="0.170" height="6.7" width="30" repeat="10 10"></a-box>
+
+    <!--second floor-->
+    <a-box src="#groundTexture" position="0 5.224 11.669" rotation="-90 0 0" depth="0.170" height="6.7" width="30" repeat="10 10"></a-box>
+    <a-box src="#groundTexture" position="13.743 5.224 1.195" rotation="90 -90 0" scale="0.480 0.380 1.000" depth="0.170" height="6.7" width="30" repeat="10 10"></a-box>
+    <a-box src="#groundTexture" position="11.704 5.224 4.422" rotation="90 -90 0" scale="0.300 0.380 1.000" depth="0.170" height="6.7" width="30" repeat="10 10"></a-box>
+    <a-box src="#groundTexture" position="10.069 5.224 1.195" rotation="90 -90 0" scale="0.480 0.380 1.000" depth="0.170" height="6.7" width="30" repeat="10 10"></a-box>
+    <a-box src="#groundTexture" position="-13.343 5.224 1.195" rotation="90 -90 0" scale="0.480 0.500 1.000" depth="0.170" height="6.7" width="30" repeat="10 10"></a-box>
+    <a-box src="#groundTexture" position="-11.704 5.224 4.422" rotation="90 -90 0" scale="0.300 0.380 1.000" depth="0.170" height="6.7" width="30" repeat="10 10"></a-box>
+    <a-box src="#groundTexture" position="-9.442 5.224 1.968" rotation="90 -90 0" scale="0.470 0.380 1.000" depth="0.170" height="6.7" width="30" repeat="10 10"></a-box>
+    <a-box src="#groundTexture" position="0 5.224 -9.987" rotation="-90 0 0" scale="1.000 1.500 1.000" depth="0.170" height="6.7" width="30" repeat="10 10"></a-box>
+
+    <!--escalators for second floor-->
+    <a-gltf-model position="11.616 2.576 0.153" rotation="0.000 360.000 0.000" src="3d_models/scene.glb" scale="0.01 0.01 0.01"></a-gltf-model>
+    <a-gltf-model position="-11.616 2.576 0.153" rotation="0.000 360.000 0.000" src="3d_models/scene.glb" scale="0.01 0.01 0.01"></a-gltf-model>
+
+    <!--railing on the second floor-->
+    <a-gltf-model position="8.871 5.224 8.552" rotation="0 -180 0" scale="0.11 0.010 0.100" src="3d_models/railing.glb"></a-gltf-model>
+    <a-gltf-model position="8.871 5.224 8.552" rotation="0 90 0" scale="0.09 0.010 0.100" src="3d_models/railing.glb"></a-gltf-model>
+    <a-gltf-model position="-8.300 5.224 8.552" rotation="0 90 0" scale="0.09 0.010 0.100" src="3d_models/railing.glb"></a-gltf-model>
+    <a-gltf-model position="8.871 5.224 -5.144" rotation="0 -180 0" scale="0.11 0.010 0.100" src="3d_models/railing.glb"></a-gltf-model>
+    <!--railing around escalators-->
+    <a-gltf-model position="11.415 5.224 -0.081" rotation="0 90 0" scale="0.035 0.010 0.100" src="3d_models/railing.glb"></a-gltf-model>
+    <a-gltf-model position="12.623 5.224 -0.081" rotation="0 90 0" scale="0.035 0.010 0.100" src="3d_models/railing.glb"></a-gltf-model>
+    <a-gltf-model position="12.875 5.224 -0.081" rotation="0 180 0" scale="0.011 0.010 0.100" src="3d_models/railing.glb"></a-gltf-model>
+    <a-gltf-model position="-10.637 5.224 -0.216" rotation="0 90 0" scale="0.035 0.010 0.100" src="3d_models/railing.glb"></a-gltf-model>
+    <a-gltf-model position="-11.867 5.224 -0.091" rotation="0 90 0" scale="0.035 0.010 0.100" src="3d_models/railing.glb"></a-gltf-model>
+    <a-gltf-model position="-10.407 5.224 -0.081" rotation="0 180 0" scale="0.011 0.010 0.100" src="3d_models/railing.glb"></a-gltf-model>
+
+    <!--store walls-->
+    <a-box src="#wallTexture" position="11.545 1.263 3.171" rotation="0 180 0" scale = "6.400 2.540 0.300"></a-box>
+    <a-box src="#wallTexture" position="11.594 1.253 -6.847" rotation="0 180 0" scale = "6.400 2.540 0.300"></a-box>
+    <a-box src="#wallTexture" position="-11.545 1.263 3.171" rotation="0 180 0" scale = "6.400 2.540 0.300"></a-box>
+    <a-box src="#wallTexture" position="-11.594 1.263 -6.558" rotation="0 180 0" scale = "6.400 2.540 0.300"></a-box>
+
+    <!--clothes store-->
+    <!--sliding door-->
+    <a-gltf-model position="8.322 0.000 -1.858" rotation="0 90 0" scale="5.200 1.200 0.500" src="3d_models/sliding_door.glb"></a-gltf-model>
+    <!--zara logo-->
+    <a-gltf-model position="8.327 1.973 -6.128" rotation="90.000 360.000 90.000" scale="1.000 1.200 0.500" src="3d_models/zara.glb"></a-gltf-model>
+    <!--shirts-->
+    <a-gltf-model position="11.545 -1.693 -5.959" rotation="0 180 0" scale="0.02 0.02 0.02" src="3d_models/shirt.glb"></a-gltf-model>
+    <a-gltf-model position="11.545 -1.693 -5.879" rotation="0 180 0" scale="0.02 0.02 0.02" src="3d_models/shirt.glb"></a-gltf-model>
+    <a-gltf-model position="11.545 -1.693 -5.799" rotation="0 180 0" scale="0.02 0.02 0.02" src="3d_models/shirt.glb"></a-gltf-model>
+    <a-gltf-model position="11.545 -1.693 -5.809" rotation="0 180 0" scale="0.02 0.02 0.02" src="3d_models/shirt.glb"></a-gltf-model>
+    <a-gltf-model position="11.545 -1.693 -5.719" rotation="0 180 0" scale="0.02 0.02 0.02" src="3d_models/shirt.glb"></a-gltf-model>
+    <a-gltf-model position="11.545 -1.693 -5.709" rotation="0 180 0" scale="0.02 0.02 0.02" src="3d_models/shirt.glb"></a-gltf-model>
+    <a-gltf-model position="11.545 -1.693 -5.639" rotation="0 180 0" scale="0.02 0.02 0.02" src="3d_models/shirt.glb"></a-gltf-model>
+    <a-gltf-model position="11.545 -1.693 -5.559" rotation="0 180 0" scale="0.02 0.02 0.02" src="3d_models/shirt.glb"></a-gltf-model>
+    <a-gltf-model position="11.545 -1.693 -5.479" rotation="0 180 0" scale="0.02 0.02 0.02" src="3d_models/shirt.glb"></a-gltf-model>
+    <a-gltf-model position="11.545 -1.693 -5.399" rotation="0 180 0" scale="0.02 0.02 0.02" src="3d_models/shirt.glb"></a-gltf-model>
+
+    <!--dresses-->
+    <a-gltf-model position="10.201 0.064 -0.076" rotation="0 180 0" scale="0.002 0.002 0.002" src="3d_models/dresses.glb"></a-gltf-model>
+    <a-gltf-model position="9.670 0.064 0.577" rotation="0 180 0" scale="0.002 0.002 0.002" src="3d_models/dresses1.glb"></a-gltf-model>
+    <a-gltf-model position="9.232 0.064 1.186" rotation="0 180 0" scale="0.002 0.002 0.002" src="3d_models/dresses.glb"></a-gltf-model>
+
+    <!--jackets-->
+    <a-gltf-model position="10.042 0.037 -5.980" rotation="0 180 0" scale="0.05 0.05 0.05" src="3d_models/jacket.glb"></a-gltf-model>
+    <a-gltf-model position="10.042 0.037 -5.680" rotation="0 180 0" scale="0.05 0.05 0.05" src="3d_models/jacket.glb"></a-gltf-model>
+    <a-gltf-model position="10.042 0.037 -5.380" rotation="0 180 0" scale="0.05 0.05 0.05" src="3d_models/jacket.glb"></a-gltf-model>
+    <a-gltf-model position="10.042 0.037 -5.080" rotation="0 180 0" scale="0.05 0.05 0.05" src="3d_models/jacket.glb"></a-gltf-model>
+
+    <!--clothes rack-->
+    <a-gltf-model position="11.529 0.064 -5.190" rotation="0 180 0" scale="0.500 0.240 0.400" src="3d_models/clothes_rack.glb"></a-gltf-model>
+    <a-gltf-model position="9.783 0.064 -5.137" rotation="0 180 0" scale="0.500 0.240 0.400" src="3d_models/clothes_rack.glb"></a-gltf-model>
+
+     <!--clothes table-->
+     <a-gltf-model position="13.575 0.064 -1.997" rotation="0 90 0" scale="0.004 0.002 -0.005" src="3d_models/clothes_table.glb"></a-gltf-model>
+
+     <!--clothes on table-->
+     <a-gltf-model position="12.781 1.072 -4.188" rotation="0 0 0" scale="0.004 0.005 -0.005" src="3d_models/tshirts.glb"></a-gltf-model>
+     <a-gltf-model position="12.501 1.239 -2.810" rotation="0 -90 0" scale="0.022 0.022 0.022" src="3d_models/shirts.glb"></a-gltf-model>
+     <a-gltf-model position="12.781 1.072 -1.402" rotation="0 0 0" scale="0.004 0.005 -0.005" src="3d_models/tshirts.glb"></a-gltf-model>
+     <a-gltf-model position="12.501 1.239 0.070" rotation="0 -90 0" scale="0.022 0.022 0.022" src="3d_models/shirts.glb"></a-gltf-model>
+    
+
+     <!--SHOE STORE-->
+     <!--shoe store-->
+
+    <!--sliding door-->
+    <a-gltf-model position="-8.326 0.000 -1.981" rotation="0 -90 0" scale="5.200 1.200 0.500" src="3d_models/sliding_door.glb"></a-gltf-model>
+
+    <!--store logo-->
+    <a-gltf-model position="-8.296 1.693 1.430" rotation="90 90 0" scale="0.140 0.230 0.140" src="3d_models/didas_logo.glb"></a-gltf-model>
+
+    <!--side shoe rack-->
+    <!--right-->
+    <a-gltf-model position="-11.244 0.398 -6.088" rotation="0 180 0" scale="0.050 0.030 -0.020 " src="3d_models/shoestand.glb" ></a-gltf-model>
+    <!--left-->
+    <a-gltf-model position="-11.244 0.398 2.726" rotation="0 0 0" scale="0.050 0.030 -0.020 " src="3d_models/shoestand.glb" ></a-gltf-model>
+    <!--back shoe rack-->
+    <!--down-->
+    <a-gltf-model position="-13.538 0.298 -5.285" rotation="0 90 0" scale="1.210 0.460 0.420" src="3d_models/shoestand2.glb" ></a-gltf-model>
+    <!--up-->
+    <a-gltf-model position="-13.538 1.874 -5.285" rotation="0 90 0" scale="1.210 0.400 0.420" src="3d_models/shoestand2.glb" ></a-gltf-model>
+
+    <!--right seat-->
+    <a-gltf-model position="-10.160 -0.040 -3.788" rotation="0 90 0" scale="0.300 0.410 0.310" src="3d_models/shopseat.glb" ></a-gltf-model>
+    <!--left seat-->
+    <a-gltf-model position="-10.160 -0.040 0.243" rotation="0 90 0" scale="0.300 0.410 0.310" src="3d_models/shopseat.glb" ></a-gltf-model>
+    <!--back seat-->
+    <a-gltf-model position="-12.179 -0.040 -1.986" rotation="0 90 0" scale="0.300 0.410 0.310" src="3d_models/shopseat.glb" ></a-gltf-model>
+    <a-gltf-model position="-12.179 -0.040 -1.500" rotation="0 90 0" scale="0.300 0.410 0.310" src="3d_models/shopseat.glb" ></a-gltf-model>
+    <a-gltf-model position="-12.179 -0.040 -0.908" rotation="0 90 0" scale="0.300 0.410 0.310" src="3d_models/shopseat.glb" ></a-gltf-model>
+    <a-gltf-model position="-12.179 -0.040 -2.586" rotation="0 90 0" scale="0.300 0.410 0.310" src="3d_models/shopseat.glb" ></a-gltf-model>
+
+    
+
+    <!--shoes-->
+    <!--left up-->
+    <a-gltf-model position="-9.820 1.000 2.788" rotation="0 0 0" scale="0.157 0.218 0.162" src="3d_models/mshoe1.glb"></a-gltf-model>
+    <a-gltf-model position="-10.820 1.000 2.788" rotation="0 0 0" scale="0.0016 0.0017 -0.0017" src="3d_models/mshoe2.glb"></a-gltf-model>
+    <a-gltf-model position="-11.820 1.000 2.788" rotation="0 0 0" scale="0.157 0.218 0.162" src="3d_models/mshoe1.glb"></a-gltf-model>
+    <a-gltf-model position="-12.820 1.000 2.788" rotation="0 0 0" scale="0.0016 0.0017 -0.0017" src="3d_models/mshoe2.glb"></a-gltf-model>
+
+    <!--left down-->
+    <a-gltf-model position="-9.820 0.380 2.295" rotation="0 180 0" scale="1.097 1.828 1.322" src="3d_models/mshoe3.glb"></a-gltf-model>
+    <a-gltf-model position="-10.820 0.451 2.788" rotation="0 180 0" scale="-0.018 0.022 0.018" src="3d_models/mshoe4.glb"></a-gltf-model>
+    <a-gltf-model position="-11.820 0.380 2.295" rotation="0 180 0" scale="1.097 1.828 1.322" src="3d_models/mshoe3.glb"></a-gltf-model>
+    <a-gltf-model position="-12.820 0.500 2.788" rotation="0 180 0" scale="-0.018 0.022 0.018" src="3d_models/mshoe4.glb"></a-gltf-model>
+
+    <!--right up-->
+    <a-gltf-model position="-9.820 1.108 -6.056" rotation="0 0 0" scale="0.087 0.138 0.092" src="3d_models/wshoe1.glb"></a-gltf-model>
+    <a-gltf-model position="-10.860 26.000 -12.148" rotation="0 0 0" scale="-1.358 1.672 1.528" src="3d_models/wshoe2.glb"></a-gltf-model>
+    <a-gltf-model position="-11.820 1.108 -6.056" rotation="0 0 0" scale="0.087 0.138 0.092" src="3d_models/wshoe1.glb"></a-gltf-model>
+    <a-gltf-model position="-12.820 26.000 -12.148" rotation="0 0 0" scale="-1.358 1.672 1.528" src="3d_models/wshoe2.glb"></a-gltf-model>
+
+    <!--right down-->
+    <a-gltf-model position="-10.320 0.499 -6.122" rotation="0 270 0" scale="0.037 0.028 -0.048" src="3d_models/wshoe3.glb"></a-gltf-model>
+    <a-gltf-model position="-10.456 0.362 -5.916" rotation="0 90 0" scale="0.002 0.002 -0.002" src="3d_models/wshoe4.glb"></a-gltf-model>
+    <a-gltf-model position="-12.320 0.499 -6.122" rotation="0 270 0" scale="0.037 0.028 -0.048" src="3d_models/wshoe3.glb"></a-gltf-model>
+    <a-gltf-model position="-12.523 0.362 -5.916" rotation="0 90 0" scale="0.002 0.002 -0.002" src="3d_models/wshoe4.glb"></a-gltf-model>
+
+    <!--back shoes up-->
+    <a-gltf-model position="-14.260 2.102 -4.918" rotation="90 0 -90" scale="0.030 0.030 0.020" src="3d_models/bshoe1.glb" ></a-gltf-model>
+    <a-gltf-model position="-14.260 2.102 -2.918" rotation="90 0 -90" scale="0.030 0.030 0.020" src="3d_models/bshoe1.glb" ></a-gltf-model>
+    <a-gltf-model position="-14.260 2.102 -1.018" rotation="90 0 -90" scale="0.030 0.030 0.020" src="3d_models/bshoe1.glb" ></a-gltf-model>
+    <a-gltf-model position="-14.260 2.102 1.018" rotation="90 0 -90" scale="0.030 0.030 0.020" src="3d_models/bshoe1.glb" ></a-gltf-model>
+
+    <!--back shoes middle-->
+    <a-gltf-model position="-14.341 1.366 -5.083" rotation="270 0 -90" scale="1.730 3.180 1.920" src="3d_models/bshoe2.glb" ></a-gltf-model>
+    <a-gltf-model position="-14.341 1.366 -3.083" rotation="270 0 -90" scale="1.730 3.180 1.920" src="3d_models/bshoe2.glb" ></a-gltf-model>
+    <a-gltf-model position="-14.341 1.366 -1.083" rotation="270 0 -90" scale="1.730 3.180 1.920" src="3d_models/bshoe2.glb" ></a-gltf-model>
+    <a-gltf-model position="-14.341 1.366 1.083" rotation="270 0 -90" scale="1.730 3.180 1.920" src="3d_models/bshoe2.glb" ></a-gltf-model>
+
+    <!--back shoes down-->
+    <a-gltf-model position="-14.341 0.458 -5.083" rotation="-45 0 -90" scale="2.590 3.430 2.640" src="3d_models/bshoe3.glb" ></a-gltf-model>
+    <a-gltf-model position="-14.341 0.458 -3.083" rotation="-45 0 -90" scale="2.590 3.430 2.640" src="3d_models/bshoe3.glb" ></a-gltf-model>
+    <a-gltf-model position="-14.341 0.458 -1.083" rotation="-45 0 -90" scale="2.590 3.430 2.640" src="3d_models/bshoe3.glb" ></a-gltf-model>
+    <a-gltf-model position="-14.341 0.458 1.083" rotation="-45 0 -90" scale="2.590 3.430 2.640" src="3d_models/bshoe3.glb" ></a-gltf-model>
+
+    <!--empty stores-->
+    <!--rolex watch-->
+    <!--sliding door-->
+    <a-gltf-model position="-8.362 -0.010 8.823" rotation="0 -90 0" scale="6.000 1.200 0.500" src="3d_models/sliding_door.glb"></a-gltf-model>
+    <!--rolex logo-->
+    <a-gltf-model position="-8.362 0.379 6.375" rotation="90.000 0.000 -90.000" scale="2 2.5 2" src="3d_models/rolex.glb"></a-gltf-model>
+    <!--gucci-->
+    <!--sliding door-->
+    <a-gltf-model position="8.243 -0.010 8.823" rotation="0 -90 0" scale="6.000 1.200 0.500" src="3d_models/sliding_door.glb"></a-gltf-model>
+    <!--gucci logo-->
+    <a-gltf-model position="8.106 0.752 4.064" rotation="0 -90 0" scale="1.200 1.000 1.500" src="3d_models/gucci.glb"></a-gltf-model>
+
+
+    <!--counter-->
+    <a-gltf-model position="-3.740 0.269 14.677" rotation="0 180 0" scale="0.012 0.010 0.010" src="3d_models/counter.glb"></a-gltf-model>
+    <!--monitors-->
+    <a-gltf-model position="-3.762 1.117 13.527" rotation="0 0 0" scale="0.012 0.010 0.010" src="3d_models/monitor.glb"></a-gltf-model>
+    <a-gltf-model position="-1.876 1.117 13.527" rotation="0 0 0" scale="0.012 0.010 0.010" src="3d_models/monitor.glb"></a-gltf-model>
+    <a-gltf-model position="-0.039 1.117 13.527" rotation="0 0 0" scale="0.012 0.010 0.010" src="3d_models/monitor.glb"></a-gltf-model>
+
+    <!--flower ceiling lights-->
+    <a-gltf-model position="11.239 2.391 9.151" rotation="0 0 0" scale="1 1 1" src="3d_models/flower_ceiling_light.glb"></a-gltf-model>
+    <a-gltf-model position="-12.066 2.391 9.151" rotation="0 0 0" scale="1 1 1" src="3d_models/flower_ceiling_light.glb"></a-gltf-model>
+    <a-gltf-model position="11.239 2.220 -1.611" rotation="0 0 0" scale="1 1 1" src="3d_models/flower_ceiling_light.glb"></a-gltf-model>
+    <a-gltf-model position="-12.076 2.210 -2.277" rotation="0 0 0" scale="1 1 1" src="3d_models/flower_ceiling_light.glb"></a-gltf-model>
+
+    <!--chandelier-->
+    <a-gltf-model position="0.000 2.648 10.937" rotation="0 0 0" scale="0.008 0.002 0.008" src="3d_models/chandelier.glb"></a-gltf-model>
+
+    <!--employee at counter-->
+    <a-gltf-model position="-0.343 0.015 13.241" rotation="0 180 0" scale="0.012 0.012 0.012" src="3d_models/employee.glb"></a-gltf-model>
+    <a-gltf-model position="1.693 0.015 13.241" rotation="0 180 0" scale="0.012 0.012 0.012" src="3d_models/employee.glb"></a-gltf-model>
+    <a-gltf-model position="-2.286 0.015 13.241" rotation="0 180 0" scale="0.012 0.012 0.012" src="3d_models/employee.glb"></a-gltf-model>
+
+    <!--roof-->    
+    <a-box src="#groundTexture" position="0 9.922 0" rotation="90 0 0" depth="0.06" height="30" width="30" repeat="10 10"></a-box>
+
+    <!--roof chandelier-->
+    <a-gltf-model position="0 7.541 0" rotation="0 180 0" scale="6 2 6" src="3d_models/roof_chandelier.glb"></a-gltf-model>
+
+    <!--SECOND FLOOR-->
+    <!--COSMETIC STORE-->
+     <!--Chanel Logo-->
+    <a-gltf-model position="10.531 4.120 8.438" rotation="90 -90 0" scale="35 35 35" src="3d_models/chanel_logo.glb"></a-gltf-model>
+    <!--walls cosmetic store-->
+    <a-box src="#wallTexture" position="12.651 3.897 3.171" rotation="0 180 0" scale = "4.200 2.540 0.300"></a-box>
+    <a-box src="#wallTexture" position="5.436 3.897 12.723" rotation="0 90 0" scale = "4.200 2.540 0.300"></a-box>
+    <!--sliding door-->
+    <a-gltf-model position="10.531 2.669 6.858" rotation="0 90 0" scale="3.900 1.100 0.500" src="3d_models/sliding_door.glb"></a-gltf-model>
+    <a-gltf-model position="7.859 2.669 10.603" rotation="0 0 0" scale="2.700 1.100 0.500" src="3d_models/sliding_door.glb"></a-gltf-model>
+    <!--cabinets-->
+    <a-gltf-model position="14.309 2.617 5.657" rotation="0 180 0" scale="1.000 1.100 1.000" src="3d_models/cabinet.glb"></a-gltf-model>
+    <a-gltf-model position="14.309 2.716 10.597" rotation="0 180 0" scale="1.000 1.100 1.000" src="3d_models/cabinet.glb"></a-gltf-model>
+    <a-gltf-model position="12.225 2.716 14.346" rotation="0 90 0" scale="1.000 1.100 1.000" src="3d_models/cabinet.glb"></a-gltf-model>
+    <a-gltf-model position="7.395 2.716 14.346" rotation="0 90 0" scale="1.000 1.100 1.000" src="3d_models/cabinet.glb"></a-gltf-model>
+    <!--stands-->
+    <a-gltf-model position="14.444 3.861 5.670" rotation="0 180 0" scale="2.990 4.000 3.500" src="3d_models/stand.glb"></a-gltf-model>
+    <a-gltf-model position="14.444 3.861 10.608" rotation="0 180 0" scale="2.990 4.000 3.500" src="3d_models/stand.glb"></a-gltf-model>
+    <a-gltf-model position="12.261 3.861 14.346" rotation="0 90 0" scale="3 4.000 3.500" src="3d_models/stand.glb"></a-gltf-model>
+    <a-gltf-model position="7.400 3.861 14.346" rotation="0 90 0" scale="2.990 4.000 3.500" src="3d_models/stand.glb"></a-gltf-model>
+    <!--table-->
+    <a-gltf-model position="5.966 2.707 12.242" rotation="0 90 0" scale="1.5 1.5 1.5" src="3d_models/tv_table.glb"></a-gltf-model>
+    <a-gltf-model position="12.275 2.825 3.892" rotation="0 0 0" scale="1.5 1.5 1.5" src="3d_models/tv_table.glb"></a-gltf-model>
+    <!--mirror-->
+    <a-gltf-model position="5.577 4.263 12.242" rotation="0 90 0" scale="0.001 0.001 0.001" src="3d_models/wall_mirror.glb"></a-gltf-model>
+    <a-gltf-model position="12.275 4.263 3.320" rotation="0 0 0" scale="0.001 0.001 0.001" src="3d_models/wall_mirror.glb"></a-gltf-model>
+    <!--chairs in the cosmetic store-->
+    <a-gltf-model position="7.224 2.698 12.242" rotation="0 90 0" scale="0.300 0.2 0.3" src="3d_models/chair_cosmetic.glb"></a-gltf-model>
+    <a-gltf-model position="12.284 2.700 4.992" rotation="0 0 0" scale="0.300 0.2 0.3" src="3d_models/chair_cosmetic.glb"></a-gltf-model>
+    <!--table mirror-->
+    <a-gltf-model position="6.075 3.432 11.501" rotation="0 60 0" scale="2 1.7 2" src="3d_models/table_mirror.glb"></a-gltf-model>
+    <a-gltf-model position="11.393 3.558 4.005" rotation="0 40 0" scale="2 1.7 2" src="3d_models/table_mirror.glb"></a-gltf-model>
+    <!--perfumes-->
+    <a-gltf-model position="14.352 4.332 4.1590" rotation="0 90 0" scale="0.1 0.1 0.1" src="3d_models/perfume1.glb"></a-gltf-model>
+    <a-gltf-model position="14.352 4.361 4.685" rotation="0 -90 0" scale="0.1 0.07 0.1" src="3d_models/perfume2.glb"></a-gltf-model>
+    <a-gltf-model position="14.352 4.029 5.054" rotation="0 90 0" scale="0.2 0.2 0.2" src="3d_models/perfume3.glb"></a-gltf-model>
+    <a-gltf-model position="14.352 4.404 5.584" rotation="0 -90 0" scale="0.1 0.1 0.1" src="3d_models/perfume4.glb"></a-gltf-model>
+    <a-gltf-model position="14.352 4.232 5.989" rotation="0 90 0" scale="0.05 0.043 0.05" src="3d_models/perfume5.glb"></a-gltf-model>
+    <a-gltf-model position="14.444 4.195 6.560" rotation="0 90 0" scale="0.05 0.05 0.05" src="3d_models/perfume6.glb"></a-gltf-model>
+    <a-gltf-model position="14.355 4.195 7.014" rotation="0 -90 0" scale="4.5 4.5 4.5" src="3d_models/perfume7.glb"></a-gltf-model>
+    <!--lakme stand-->
+    <a-gltf-model position="15.482 2.705 12.785" rotation="0 180 0" scale="1.5 1 1.5" src="3d_models/lakme.glb"></a-gltf-model>
+    <a-gltf-model position="15.482 2.705 7.663" rotation="0 180 0" scale="1.5 1 1.5" src="3d_models/akme.glb"></a-gltf-model>
+    <a-gltf-model position="10.298 2.705 15.568" rotation="0 90 0" scale="1.5 1 1.5" src="3d_models/lakme.glb"></a-gltf-model>
+    <!--cosmetic set-->
+    <a-gltf-model position="9.276 3.625 15.975" rotation="0 90 0" scale="1 1.4 2.3" src="3d_models/cosmetic set.glb"></a-gltf-model>
+    <a-gltf-model position="14.087 3.625 16.008" rotation="0 90 0" scale="1 1.4 2.3" src="3d_models/cosmetic set.glb"></a-gltf-model>
+    <a-gltf-model position="16.012 3.603 8.820" rotation="0 180 0" scale="1 1.4 2.3" src="3d_models/cosmetic set.glb"></a-gltf-model>
+    <a-gltf-model position="15.997 3.603 3.772" rotation="0 180 0" scale="1 1.4 2.3" src="3d_models/cosmetic set.glb"></a-gltf-model>
+    <!--shelf items-->
+    <!--shelf 2-->
+    <a-gltf-model position="14.422 4.227 9.210" rotation="0 -90 0" scale="2.5 2.5 2.5" src="3d_models/makeup_palette.glb"></a-gltf-model>
+    <a-gltf-model position="14.422 4.227 9.810" rotation="0 -90 0" scale="2.5 2.5 2.5" src="3d_models/makeup_palette.glb"></a-gltf-model>
+    <a-gltf-model position="14.422 4.227 10.410" rotation="0 -90 0" scale="2.5 2.5 2.5" src="3d_models/makeup_palette.glb"></a-gltf-model>
+    <a-gltf-model position="14.422 4.227 11.010" rotation="0 -90 0" scale="2.5 2.5 2.5" src="3d_models/makeup_palette.glb"></a-gltf-model>
+    <a-gltf-model position="14.422 4.227 11.610" rotation="0 -90 0" scale="2.5 2.5 2.5" src="3d_models/makeup_palette.glb"></a-gltf-model>
+    <a-gltf-model position="14.422 4.227 12.190" rotation="0 -90 0" scale="2.5 2.5 2.5" src="3d_models/makeup_palette.glb"></a-gltf-model>
+    <!--shelf 3-->
+    <a-gltf-model position="13.747 4.224 14.496" rotation="0 0 0" scale="0.1 0.1 0.1" src="3d_models/lipsticks.glb"></a-gltf-model>
+    <a-gltf-model position="13.144 4.224 14.496" rotation="0 0 0" scale="0.1 0.1 0.1" src="3d_models/lipsticks.glb"></a-gltf-model>
+    <a-gltf-model position="12.544 4.224 14.496" rotation="0 0 0" scale="0.1 0.1 0.1" src="3d_models/lipsticks.glb"></a-gltf-model>
+    <a-gltf-model position="11.944 4.224 14.496" rotation="0 0 0" scale="0.1 0.1 0.1" src="3d_models/lipsticks.glb"></a-gltf-model>
+    <a-gltf-model position="11.344 4.224 14.496" rotation="0 0 0" scale="0.1 0.1 0.1" src="3d_models/lipsticks.glb"></a-gltf-model>
+    <a-gltf-model position="10.744 4.224 14.496" rotation="0 0 0" scale="0.1 0.1 0.1" src="3d_models/lipsticks.glb"></a-gltf-model>
+    <a-gltf-model position="13.747 4.224 14.396" rotation="0 0 0" scale="0.1 0.1 0.1" src="3d_models/lipsticks.glb"></a-gltf-model>
+    <a-gltf-model position="13.144 4.224 14.396" rotation="0 0 0" scale="0.1 0.1 0.1" src="3d_models/lipsticks.glb"></a-gltf-model>
+    <a-gltf-model position="12.544 4.224 14.396" rotation="0 0 0" scale="0.1 0.1 0.1" src="3d_models/lipsticks.glb"></a-gltf-model>
+    <a-gltf-model position="11.944 4.224 14.396" rotation="0 0 0" scale="0.1 0.1 0.1" src="3d_models/lipsticks.glb"></a-gltf-model>
+    <a-gltf-model position="11.344 4.224 14.396" rotation="0 0 0" scale="0.1 0.1 0.1" src="3d_models/lipsticks.glb"></a-gltf-model>
+    <a-gltf-model position="10.744 4.224 14.396" rotation="0 0 0" scale="0.1 0.1 0.1" src="3d_models/lipsticks.glb"></a-gltf-model>
+    <a-gltf-model position="13.747 4.224 14.296" rotation="0 0 0" scale="0.1 0.1 0.1" src="3d_models/lipsticks.glb"></a-gltf-model>
+    <a-gltf-model position="13.144 4.224 14.296" rotation="0 0 0" scale="0.1 0.1 0.1" src="3d_models/lipsticks.glb"></a-gltf-model>
+    <a-gltf-model position="12.544 4.224 14.296" rotation="0 0 0" scale="0.1 0.1 0.1" src="3d_models/lipsticks.glb"></a-gltf-model>
+    <a-gltf-model position="11.944 4.224 14.296" rotation="0 0 0" scale="0.1 0.1 0.1" src="3d_models/lipsticks.glb"></a-gltf-model>
+    <a-gltf-model position="11.344 4.224 14.296" rotation="0 0 0" scale="0.1 0.1 0.1" src="3d_models/lipsticks.glb"></a-gltf-model>
+    <a-gltf-model position="10.744 4.224 14.296" rotation="0 0 0" scale="0.1 0.1 0.1" src="3d_models/lipsticks.glb"></a-gltf-model>
+    <!--shelf 4-->
+    <a-gltf-model position="8.861 4.231 13.715" rotation="0 0 0" scale="0.007 0.007 0.007" src="3d_models/sling_bag1.glb"></a-gltf-model>
+    <a-gltf-model position="7.631 4.231 13.799" rotation="0 0 0" scale="0.007 0.007 0.007" src="3d_models/sling_bag1.glb"></a-gltf-model>
+    <a-gltf-model position="6.326 4.231 13.715" rotation="0 0 0" scale="0.007 0.007 0.007" src="3d_models/sling_bag1.glb"></a-gltf-model>
+    <a-gltf-model position="6.996 4.398 14.337" rotation="0 180 0" scale="0.9 0.9 0.9" src="3d_models/sling_bag2.glb"></a-gltf-model>
+    <a-gltf-model position="8.265 4.398 14.337" rotation="0 180 0" scale="0.9 0.9 0.9" src="3d_models/sling_bag2.glb"></a-gltf-model>
+    <!--flower ceiling lights-->
+    <a-gltf-model position="8.265 4.932 12.849" rotation="0 180 0" scale="0.9 0.9 0.9" src="3d_models/flower_ceiling_light.glb"></a-gltf-model>
+    <a-gltf-model position="12.345 4.932 7.755" rotation="0 180 0" scale="0.9 0.9 0.9" src="3d_models/flower_ceiling_light.glb"></a-gltf-model>
+    
+    <!--GADGETS STORE-->
+    <!--walls gadget store-->
+    <a-box src="#wallTexture" position="-12.651 3.897 3.171" rotation="0 180 0" scale = "4.200 2.540 0.300"></a-box>
+    <a-box src="#wallTexture" position="-5.436 3.897 12.723" rotation="0 90 0" scale = "4.200 2.540 0.300"></a-box>
+    <!--sliding door-->
+    <a-gltf-model position="-10.531 2.669 6.858" rotation="0 90 0" scale="3.900 1.100 0.500" src="sliding_door.glb"></a-gltf-model>
+    <a-gltf-model position="-7.859 2.669 10.603" rotation="0 0 0" scale="2.700 1.100 0.500" src="sliding_door.glb"></a-gltf-model>
+
+    <!--camera positioning-->
+    <a-entity id="rig" position="0 3.0 -30" rotation="0 180 0">
+        <a-camera id="camera"></a-camera>
+    </a-entity>
+
+</a-scene>
+</body>
+</html>
