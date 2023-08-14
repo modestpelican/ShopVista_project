@@ -22,7 +22,9 @@
         </div>
       </div>
     
-       <script>
+
+    <!--Script for Splash Screen-->
+    <script>
         const splashButton = document.querySelector('.splash__button');
         const splashScreen = document.querySelector('.splash');
         
@@ -30,7 +32,36 @@
             splashScreen.style.display = 'none';
         });
     </script>
+
+
+    <!--Script for links-->
+    <script>
+        AFRAME.registerComponent('cursor-listener', {
+            init: function () {
+                const itemId = this.el.getAttribute('cursor-listener');
     
+                this.el.addEventListener('click', () => {
+                    let link;
+                    if (itemId === 'jacket') {
+                        link = 'https://www.amazon.in/LMONTE-Casual-Cotton-Winter-Jacket/dp/B0BGSZJSB9/ref=sr_1_34?keywords=jacket+for+men&qid=1692009784&sprefix=jacket+%2Caps%2C232&sr=8-34';
+                    } else if (itemId === 'shirt') {
+                        link = 'https://www.amazon.in/Allen-Solly-Sweatshirt-ASSTORGPN40121L_Grey-Melange/dp/B07DPMK4Z5/ref=sr_1_1_sspa?keywords=sweatshirts+for+men&qid=1692009864&sprefix=swshirts+for+men%2Caps%2C217&sr=8-1-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&psc=1';
+                    }
+                    else if (itemId === 'shirt_combo') {
+                        link = 'https://www.amazon.in/ZAKOD-Cotton-Shirts-BlackMehroonWhiteBlue-X-Large/dp/B07NLDZVXL/ref=sr_1_14?crid=EXQNQ7MHRHK0&keywords=shirts+for+men+combo&qid=1692009963&sprefix=shirts+for+men+combo%2Caps%2C220&sr=8-14';
+                    }
+                    else if (itemId === 'dresses') {
+                        link = 'https://www.amazon.in/Printed-Womens-Casual-Western-Medium/dp/B0C1BV9WDH/ref=sr_1_7?keywords=dresses+for+women&qid=1692010175&sprefix=dresses%2Caps%2C233&sr=8-7';
+                    }
+                    if (link) {
+                        window.open(link, '_blank');
+                    }
+                });
+            }
+        });
+    </script>
+
+
 <a-scene>
     <a-camera position="0 2 -10" rotation="0 -270 0"></a-camera>
     <a-assets>
@@ -150,27 +181,27 @@
     <!--zara logo-->
     <a-gltf-model position="8.327 1.973 -6.128" rotation="90.000 360.000 90.000" scale="1.000 1.200 0.500" src="3d_models/zara.glb"></a-gltf-model>
     <!--shirts-->
-    <a-gltf-model position="11.545 -1.693 -5.959" rotation="0 180 0" scale="0.02 0.02 0.02" src="3d_models/shirt.glb"></a-gltf-model>
-    <a-gltf-model position="11.545 -1.693 -5.879" rotation="0 180 0" scale="0.02 0.02 0.02" src="3d_models/shirt.glb"></a-gltf-model>
-    <a-gltf-model position="11.545 -1.693 -5.799" rotation="0 180 0" scale="0.02 0.02 0.02" src="3d_models/shirt.glb"></a-gltf-model>
-    <a-gltf-model position="11.545 -1.693 -5.809" rotation="0 180 0" scale="0.02 0.02 0.02" src="3d_models/shirt.glb"></a-gltf-model>
-    <a-gltf-model position="11.545 -1.693 -5.719" rotation="0 180 0" scale="0.02 0.02 0.02" src="3d_models/shirt.glb"></a-gltf-model>
-    <a-gltf-model position="11.545 -1.693 -5.709" rotation="0 180 0" scale="0.02 0.02 0.02" src="3d_models/shirt.glb"></a-gltf-model>
-    <a-gltf-model position="11.545 -1.693 -5.639" rotation="0 180 0" scale="0.02 0.02 0.02" src="3d_models/shirt.glb"></a-gltf-model>
-    <a-gltf-model position="11.545 -1.693 -5.559" rotation="0 180 0" scale="0.02 0.02 0.02" src="3d_models/shirt.glb"></a-gltf-model>
-    <a-gltf-model position="11.545 -1.693 -5.479" rotation="0 180 0" scale="0.02 0.02 0.02" src="3d_models/shirt.glb"></a-gltf-model>
-    <a-gltf-model position="11.545 -1.693 -5.399" rotation="0 180 0" scale="0.02 0.02 0.02" src="3d_models/shirt.glb"></a-gltf-model>
+    <a-gltf-model position="11.545 -1.693 -5.959" rotation="0 180 0" scale="0.02 0.02 0.02" src="3d_models/shirt.glb" cursor-listener="shirt"></a-gltf-model>
+    <a-gltf-model position="11.545 -1.693 -5.879" rotation="0 180 0" scale="0.02 0.02 0.02" src="3d_models/shirt.glb" cursor-listener="shirt"></a-gltf-model>
+    <a-gltf-model position="11.545 -1.693 -5.799" rotation="0 180 0" scale="0.02 0.02 0.02" src="3d_models/shirt.glb" cursor-listener="shirt"></a-gltf-model>
+    <a-gltf-model position="11.545 -1.693 -5.809" rotation="0 180 0" scale="0.02 0.02 0.02" src="3d_models/shirt.glb" cursor-listener="shirt"></a-gltf-model>
+    <a-gltf-model position="11.545 -1.693 -5.719" rotation="0 180 0" scale="0.02 0.02 0.02" src="3d_models/shirt.glb" cursor-listener="shirt"></a-gltf-model>
+    <a-gltf-model position="11.545 -1.693 -5.709" rotation="0 180 0" scale="0.02 0.02 0.02" src="3d_models/shirt.glb" cursor-listener="shirt"></a-gltf-model>
+    <a-gltf-model position="11.545 -1.693 -5.639" rotation="0 180 0" scale="0.02 0.02 0.02" src="3d_models/shirt.glb" cursor-listener="shirt"></a-gltf-model>
+    <a-gltf-model position="11.545 -1.693 -5.559" rotation="0 180 0" scale="0.02 0.02 0.02" src="3d_models/shirt.glb" cursor-listener="shirt"></a-gltf-model>
+    <a-gltf-model position="11.545 -1.693 -5.479" rotation="0 180 0" scale="0.02 0.02 0.02" src="3d_models/shirt.glb" cursor-listener="shirt"></a-gltf-model>
+    <a-gltf-model position="11.545 -1.693 -5.399" rotation="0 180 0" scale="0.02 0.02 0.02" src="3d_models/shirt.glb" cursor-listener="shirt"></a-gltf-model>
 
     <!--dresses-->
-    <a-gltf-model position="10.201 0.064 -0.076" rotation="0 180 0" scale="0.002 0.002 0.002" src="3d_models/dresses.glb"></a-gltf-model>
-    <a-gltf-model position="9.670 0.064 0.577" rotation="0 180 0" scale="0.002 0.002 0.002" src="3d_models/dresses1.glb"></a-gltf-model>
-    <a-gltf-model position="9.232 0.064 1.186" rotation="0 180 0" scale="0.002 0.002 0.002" src="3d_models/dresses.glb"></a-gltf-model>
+    <a-gltf-model position="10.201 0.064 -0.076" rotation="0 180 0" scale="0.002 0.002 0.002" src="3d_models/dresses.glb" cursor-listener="dresses"></a-gltf-model>
+    <a-gltf-model position="9.670 0.064 0.577" rotation="0 180 0" scale="0.002 0.002 0.002" src="3d_models/dresses1.glb" cursor-listener="dresses"></a-gltf-model>
+    <a-gltf-model position="9.232 0.064 1.186" rotation="0 180 0" scale="0.002 0.002 0.002" src="3d_models/dresses.glb" cursor-listener="dresses"></a-gltf-model>
 
     <!--jackets-->
-    <a-gltf-model position="10.042 0.037 -5.980" rotation="0 180 0" scale="0.05 0.05 0.05" src="3d_models/jacket.glb"></a-gltf-model>
-    <a-gltf-model position="10.042 0.037 -5.680" rotation="0 180 0" scale="0.05 0.05 0.05" src="3d_models/jacket.glb"></a-gltf-model>
-    <a-gltf-model position="10.042 0.037 -5.380" rotation="0 180 0" scale="0.05 0.05 0.05" src="3d_models/jacket.glb"></a-gltf-model>
-    <a-gltf-model position="10.042 0.037 -5.080" rotation="0 180 0" scale="0.05 0.05 0.05" src="3d_models/jacket.glb"></a-gltf-model>
+    <a-gltf-model position="10.042 0.037 -5.980" rotation="0 180 0" scale="0.05 0.05 0.05" src="3d_models/jacket.glb" cursor-listener="jacket"></a-gltf-model>
+    <a-gltf-model position="10.042 0.037 -5.680" rotation="0 180 0" scale="0.05 0.05 0.05" src="3d_models/jacket.glb" cursor-listener="jacket"></a-gltf-model>
+    <a-gltf-model position="10.042 0.037 -5.380" rotation="0 180 0" scale="0.05 0.05 0.05" src="3d_models/jacket.glb" cursor-listener="jacket"></a-gltf-model>
+    <a-gltf-model position="10.042 0.037 -5.080" rotation="0 180 0" scale="0.05 0.05 0.05" src="3d_models/jacket.glb" cursor-listener="jacket"></a-gltf-model>
 
     <!--clothes rack-->
     <a-gltf-model position="11.529 0.064 -5.190" rotation="0 180 0" scale="0.500 0.240 0.400" src="3d_models/clothes_rack.glb"></a-gltf-model>
@@ -180,10 +211,10 @@
      <a-gltf-model position="13.575 0.064 -1.997" rotation="0 90 0" scale="0.004 0.002 -0.005" src="3d_models/clothes_table.glb"></a-gltf-model>
 
      <!--clothes on table-->
-     <a-gltf-model position="12.781 1.072 -4.188" rotation="0 0 0" scale="0.004 0.005 -0.005" src="3d_models/tshirts.glb"></a-gltf-model>
-     <a-gltf-model position="12.501 1.239 -2.810" rotation="0 -90 0" scale="0.022 0.022 0.022" src="3d_models/shirts.glb"></a-gltf-model>
-     <a-gltf-model position="12.781 1.072 -1.402" rotation="0 0 0" scale="0.004 0.005 -0.005" src="3d_models/tshirts.glb"></a-gltf-model>
-     <a-gltf-model position="12.501 1.239 0.070" rotation="0 -90 0" scale="0.022 0.022 0.022" src="3d_models/shirts.glb"></a-gltf-model>
+     <a-gltf-model position="12.781 1.072 -4.188" rotation="0 0 0" scale="0.004 0.005 -0.005" src="3d_models/tshirts.glb" cursor-listener="shirt_combo"></a-gltf-model>
+     <a-gltf-model position="12.501 1.239 -2.810" rotation="0 -90 0" scale="0.022 0.022 0.022" src="3d_models/shirts.glb" cursor-listener="shirt_combo"></a-gltf-model>
+     <a-gltf-model position="12.781 1.072 -1.402" rotation="0 0 0" scale="0.004 0.005 -0.005" src="3d_models/tshirts.glb" cursor-listener="shirt_combo"></a-gltf-model>
+     <a-gltf-model position="12.501 1.239 0.070" rotation="0 -90 0" scale="0.022 0.022 0.022" src="3d_models/shirts.glb" cursor-listener="shirt_combo"></a-gltf-model>
 
      <!--SHOE STORE-->
      <!--shoe store-->
@@ -192,7 +223,7 @@
     <a-gltf-model position="-8.326 0.000 -1.981" rotation="0 -90 0" scale="5.200 1.200 0.500" src="3d_models/sliding_door.glb"></a-gltf-model>
 
     <!--store logo-->
-    <a-gltf-model position="-8.296 1.693 1.430" rotation="90 90 0" scale="0.140 0.230 0.140" src="3d_models/didas_logo.glb"></a-gltf-model>
+    <a-gltf-model position="-8.296 1.693 1.430" rotation="90 90 0" scale="0.140 0.230 0.140" src="3d_models/adidas_logo.glb"></a-gltf-model>
 
     <!--side shoe rack-->
     <!--right-->
