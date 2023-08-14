@@ -1,12 +1,36 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Virtual Shopping Mall with A-Frame</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <link rel="stylesheet" href="main.css">
+    <title>ShopVista - Your Window to Endless Shopping Delights</title>
+    <meta name="description" content="Now in 3D!">
     <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
-    <script src="https://unpkg.com/aframe-event-set-component@3.0.3/dist/aframe-event-set-component.min.js"></script>
-
+    <script src="https://cdn.rawgit.com/donmccurdy/aframe-extras/v3.8.6/dist/aframe-extras.min.js"></script>
 </head>
 <body>
+
+    <!-- Splash Screen -->
+    <div class="splash">
+        <div class="splash__card">
+          <h1>ShopVista-Your Window to Endless Virtual Shopping Delights</h1>
+          <p>You can move around with WASD keys (desktop) and drag using mousepad/ trackpad</p>
+          <img class="splash__img" src="textures/projectstrtimg.jpeg" alt="image">
+          <button class="splash__button">Enter</button>
+        </div>
+      </div>
+    
+       <script>
+        const splashButton = document.querySelector('.splash__button');
+        const splashScreen = document.querySelector('.splash');
+        
+        splashButton.addEventListener('click', () => {
+            splashScreen.style.display = 'none';
+        });
+    </script>
+    
 <a-scene>
     <a-camera position="0 2 -10" rotation="0 -270 0"></a-camera>
     <a-assets>
