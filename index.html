@@ -3,6 +3,8 @@
 <head>
     <title>Virtual Shopping Mall with A-Frame</title>
     <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-event-set-component@3.0.3/dist/aframe-event-set-component.min.js"></script>
+
 </head>
 <body>
 <a-scene>
@@ -27,8 +29,15 @@
     <a-gltf-model position="-8.967 -15.979 -16.653" rotation="0 0 0" src="3d_models/bush.glb" scale="0.087 0.065 0.050"></a-gltf-model>
 
     <!--escalators for first floor-->
-    <a-gltf-model position="3.148 -0.051 3.374" rotation="0 -180 0" src="3d_models/scene.glb" scale="0.01 0.01 0.01"></a-gltf-model>
-    <a-gltf-model position="-3.148 -0.051 3.374" rotation="0 -180 0" src="3d_models/scene.glb" scale="0.01 0.01 0.01"></a-gltf-model>
+    <a-gltf-model position="3.148 -0.051 3.374" rotation="0 -180 0" src="scene.glb" scale="0.01 0.01 0.01"
+    event-set__enter="_event: mouseenter; material.opacity: 0.6"
+    event-set__leave="_event: mouseleave; material.opacity: 1" 
+    event-set__tarpos="_event: click; _target: #rig; position: 2.800 3.3 0.008"></a-gltf-model>
+
+    <a-gltf-model position="-3.148 -0.051 3.374" rotation="0 -180 0" src="scene.glb" scale="0.01 0.01 0.01"
+    event-set__enter="_event: mouseenter; material.opacity: 0.6"
+    event-set__leave="_event: mouseleave; material.opacity: 1"
+    event-set__resetposition="_event: click; _target: #rig; position: -3.544 0.3 3.946"></a-gltf-model>
 
     <!--fountain-->
     <a-gltf-model position="0 0 0" rotation="0 0 0" src="3d_models/horse fountain.glb" scale="2 2 2"></a-gltf-model>
@@ -82,8 +91,15 @@
     <a-box src="#groundTexture" position="0 5.224 -9.987" rotation="-90 0 0" scale="1.000 1.500 1.000" depth="0.170" height="6.7" width="30" repeat="10 10"></a-box>
 
     <!--escalators for second floor-->
-    <a-gltf-model position="11.616 2.576 0.153" rotation="0.000 360.000 0.000" src="3d_models/scene.glb" scale="0.01 0.01 0.01"></a-gltf-model>
-    <a-gltf-model position="-11.616 2.576 0.153" rotation="0.000 360.000 0.000" src="3d_models/scene.glb" scale="0.01 0.01 0.01"></a-gltf-model>
+    <a-gltf-model position="11.616 2.576 0.153" rotation="0.000 360.000 0.000" src="scene.glb" scale="0.01 0.01 0.01"
+    event-set__enter="_event: mouseenter; material.opacity: 0.6"
+    event-set__leave="_event: mouseleave; material.opacity: 1"
+    event-set__resetposition="_event: click; _target: #rig; position: -11.971 2.658 -0.384"></a-gltf-model>
+
+    <a-gltf-model position="-11.616 2.576 0.153" rotation="0.000 360.000 0.000" src="scene.glb" scale="0.01 0.01 0.01"
+    event-set__enter="_event: mouseenter; material.opacity: 0.6"
+    event-set__leave="_event: mouseleave; material.opacity: 1" 
+    event-set__tarpos="_event: click; _target: #rig; position: 11.264 5.354 -5.230"></a-gltf-model>
 
     <!--railing on the second floor-->
     <a-gltf-model position="8.871 5.224 8.552" rotation="0 -180 0" scale="0.11 0.010 0.100" src="3d_models/railing.glb"></a-gltf-model>
@@ -144,7 +160,6 @@
      <a-gltf-model position="12.501 1.239 -2.810" rotation="0 -90 0" scale="0.022 0.022 0.022" src="3d_models/shirts.glb"></a-gltf-model>
      <a-gltf-model position="12.781 1.072 -1.402" rotation="0 0 0" scale="0.004 0.005 -0.005" src="3d_models/tshirts.glb"></a-gltf-model>
      <a-gltf-model position="12.501 1.239 0.070" rotation="0 -90 0" scale="0.022 0.022 0.022" src="3d_models/shirts.glb"></a-gltf-model>
-    
 
      <!--SHOE STORE-->
      <!--shoe store-->
@@ -472,9 +487,18 @@
     <a-gltf-model position="0.155 5.758 -16.130" rotation="0 360 0" scale="3 3 2" src="3d_models/supermarket_potato_chips_shelf_asset.glb"></a-gltf-model>
     <a-gltf-model position="-11.708 5.022 -12.558" rotation="0 90 0" scale="2.5 2.5 3" src="3d_models/kaafi.glb"></a-gltf-model>
     <!--camera positioning-->
-    <a-entity id="rig" position="0 3.0 -50" rotation="0 180 0">
-        <a-camera id="camera"></a-camera>
-    </a-entity>
+     <!--camera positioning-->
+    <a-entity id="rig" position="0 0.3 -30" rotation="0 180 0">
+        <a-camera id="camera" look-controls position="0 1.6 0">
+            <a-entity 
+                  cursor
+                  position="0 0 -1"
+                  geometry="primitive: sphere; radius: 0.009"
+                  material="color: black; shader: flat"
+                  opacity="0.5">
+            </a-entity>
+        </a-camera>
+      </a-entity>
 
 </a-scene>
 </body>
