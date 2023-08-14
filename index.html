@@ -53,6 +53,30 @@
                     else if (itemId === 'dresses') {
                         link = 'https://www.amazon.in/Printed-Womens-Casual-Western-Medium/dp/B0C1BV9WDH/ref=sr_1_7?keywords=dresses+for+women&qid=1692010175&sprefix=dresses%2Caps%2C233&sr=8-7';
                     }
+                    else if (itemId === 'brown_shoes') {
+                    link = 'https://www.amazon.in/gp/aw/d/B0C3ZNDDQM/?_encoding=UTF8&pd_rd_plhdr=t&aaxitk=0459c79f9fd8b347a728c16527d91766&hsa_cr_id=0&qid=1692011941&sr=1-2-e0fa1fdd-d857-4087-adda-5bd576b25987&ref_=sbx_be_s_sparkle_mcd_asin_1_img&pd_rd_w=9Ffvp&content-id=amzn1.sym.df9fe057-524b-4172-ac34-9a1b3c4e647d%3Aamzn1.sym.df9fe057-524b-4172-ac34-9a1b3c4e647d&pf_rd_p=df9fe057-524b-4172-ac34-9a1b3c4e647d&pf_rd_r=S5JJWKEH5R3E4YVMFQQT&pd_rd_wg=QVYLX&pd_rd_r=387ec5b6-a1b3-49ad-90a7-2217588fc9ef';
+                    }
+                    else if (itemId === 'sport_shoes') {
+                        link = 'https://www.amazon.in/Xiaomi-Mens-Advanced-Tech-Running/dp/B0C1C4S42P/ref=sr_1_10?keywords=sport+shoes+for+men&qid=1692011995&refinements=p_36%3A4516640031&rnid=4516629031&s=shoes&sprefix=sport+shoes%2Cshoes%2C296&sr=1-10';
+                    }
+                    else if (itemId === 'black_leather_shoes') {
+                        link = 'https://www.amazon.in/Mochi-Black-Leather-Moccasins-7-19-6388/dp/B08L5L98YT/ref=sr_1_6?crid=6FEGEUZXM6WW&keywords=black+leather+shoes+for+men&qid=1692012063&s=shoes&sprefix=black+leather+shoes+for+men%2Cshoes%2C218&sr=1-6';
+                    }
+                    else if (itemId === 'pink_sport_shoes') {
+                        link = 'https://www.amazon.in/Puma-Kendall-Foxglove-Black-Running-38139203/dp/B09P1NRQRB/ref=sr_1_16?crid=2EEKUPJHUWUU8&keywords=pink+sport+shoes&qid=1692012100&s=shoes&sprefix=pink+sport+shoe%2Cshoes%2C216&sr=1-16';
+                    }
+                    else if (itemId === 'heels') {
+                        link = 'https://www.amazon.in/Clarks-Womens-Illeana-Smooth-26162303/dp/B09NR9BG4M/ref=sr_1_11?crid=2ILAEIKQJI8N3&keywords=heels+for+women&qid=1692012210&refinements=p_36%3A4516640031&rnid=4516629031&s=shoes&sprefix=heels%2Cshoes%2C226&sr=1-11';
+                    }
+                    else if (itemId === 'black_sport_shoes') {
+                        link = 'https://www.amazon.in/Adidas-Beamers-Running-Black-10-10/dp/B08FZTW88G/ref=sr_1_7?crid=MX85P21JPG0W&keywords=black+sport+shoes&qid=1692012274&refinements=p_36%3A4516640031&rnid=4516629031&s=shoes&sprefix=black+sport+shoe%2Cshoes%2C213&sr=1-7';
+                    }
+                    else if (itemId === 'style_lace_shoes') {
+                        link = 'https://www.amazon.in/Nike-Revolution-Running-Shoes-Numeric_8/dp/B09NMH3LV2/ref=sr_1_12?crid=3D5PVCRJ9PCCP&keywords=sport+shoes&qid=1692012328&refinements=p_36%3A4516640031&rnid=4516629031&s=shoes&sprefix=sport+shoe%2Cshoes%2C219&sr=1-12';
+                    }
+                    else if (itemId === 'style_lace_shoes2') {
+                        link = 'https://www.amazon.in/ASICS-Gel-Lethal-Field-White-Sports/dp/B0B8NJLTLM/ref=sr_1_17?crid=1X2CRYG6KOL32&keywords=sport+shoes&qid=1692012375&refinements=p_36%3A4516642031&rnid=4516629031&s=shoes&sprefix=sport+shoes%2Cshoes%2C264&sr=1-17';
+                    }
                     if (link) {
                         window.open(link, '_blank');
                     }
@@ -216,14 +240,14 @@
      <a-gltf-model position="12.781 1.072 -1.402" rotation="0 0 0" scale="0.004 0.005 -0.005" src="3d_models/tshirts.glb" cursor-listener="shirt_combo"></a-gltf-model>
      <a-gltf-model position="12.501 1.239 0.070" rotation="0 -90 0" scale="0.022 0.022 0.022" src="3d_models/shirts.glb" cursor-listener="shirt_combo"></a-gltf-model>
 
-     <!--SHOE STORE-->
+    <!--SHOE STORE-->
      <!--shoe store-->
 
     <!--sliding door-->
     <a-gltf-model position="-8.326 0.000 -1.981" rotation="0 -90 0" scale="5.200 1.200 0.500" src="3d_models/sliding_door.glb"></a-gltf-model>
 
     <!--store logo-->
-    <a-gltf-model position="-8.296 1.693 1.430" rotation="90 90 0" scale="0.140 0.230 0.140" src="3d_models/adidas_logo.glb"></a-gltf-model>
+    <a-gltf-model position="-8.296 1.693 1.430" rotation="90 90 0" scale="0.140 0.230 0.140" src="3d_models/didas_logo.glb"></a-gltf-model>
 
     <!--side shoe rack-->
     <!--right-->
@@ -248,46 +272,42 @@
 
     <!--shoes-->
     <!--left up-->
-    <a-gltf-model position="-9.820 1.000 2.788" rotation="0 0 0" scale="0.157 0.218 0.162" src="3d_models/mshoe1.glb"></a-gltf-model>
-    <a-gltf-model position="-10.820 1.000 2.788" rotation="0 0 0" scale="0.0016 0.0017 -0.0017" src="3d_models/mshoe2.glb"></a-gltf-model>
-    <a-gltf-model position="-11.820 1.000 2.788" rotation="0 0 0" scale="0.157 0.218 0.162" src="3d_models/mshoe1.glb"></a-gltf-model>
-    <a-gltf-model position="-12.820 1.000 2.788" rotation="0 0 0" scale="0.0016 0.0017 -0.0017" src="3d_models/mshoe2.glb"></a-gltf-model>
+    <a-gltf-model position="-9.820 1.000 2.788" rotation="0 0 0" scale="0.157 0.218 0.162" src="3d_models/mshoe1.glb" cursor-listener="brown_shoes"></a-gltf-model>
+    <a-gltf-model position="-10.820 1.000 2.788" rotation="0 0 0" scale="0.0016 0.0017 -0.0017" src="3d_models/mshoe2.glb" cursor-listener="sport_shoes"></a-gltf-model>
+    <a-gltf-model position="-11.820 1.000 2.788" rotation="0 0 0" scale="0.157 0.218 0.162" src="3d_models/mshoe1.glb" cursor-listener="brown_shoes"></a-gltf-model>
+    <a-gltf-model position="-12.820 1.000 2.788" rotation="0 0 0" scale="0.0016 0.0017 -0.0017" src="3d_models/mshoe2.glb" cursor-listener="sport_shoes"></a-gltf-model>
 
     <!--left down-->
-    <a-gltf-model position="-9.820 0.380 2.295" rotation="0 180 0" scale="1.097 1.828 1.322" src="3d_models/mshoe3.glb"></a-gltf-model>
-    <a-gltf-model position="-10.820 0.451 2.788" rotation="0 180 0" scale="-0.018 0.022 0.018" src="3d_models/mshoe4.glb"></a-gltf-model>
-    <a-gltf-model position="-11.820 0.380 2.295" rotation="0 180 0" scale="1.097 1.828 1.322" src="3d_models/mshoe3.glb"></a-gltf-model>
-    <a-gltf-model position="-12.820 0.500 2.788" rotation="0 180 0" scale="-0.018 0.022 0.018" src="3d_models/mshoe4.glb"></a-gltf-model>
+    <a-gltf-model position="-9.820 0.380 2.295" rotation="0 180 0" scale="1.097 1.828 1.322" src="3d_models/mshoe3.glb" cursor-listener="black_leather_shoes"></a-gltf-model>
+    <a-gltf-model position="-11.820 0.380 2.295" rotation="0 180 0" scale="1.097 1.828 1.322" src="3d_models/mshoe3.glb" cursor-listener="black_leather_shoes"></a-gltf-model>
 
     <!--right up-->
-    <a-gltf-model position="-9.820 1.108 -6.056" rotation="0 0 0" scale="0.087 0.138 0.092" src="3d_models/wshoe1.glb"></a-gltf-model>
-    <a-gltf-model position="-10.860 26.000 -12.148" rotation="0 0 0" scale="-1.358 1.672 1.528" src="3d_models/wshoe2.glb"></a-gltf-model>
-    <a-gltf-model position="-11.820 1.108 -6.056" rotation="0 0 0" scale="0.087 0.138 0.092" src="3d_models/wshoe1.glb"></a-gltf-model>
-    <a-gltf-model position="-12.820 26.000 -12.148" rotation="0 0 0" scale="-1.358 1.672 1.528" src="3d_models/wshoe2.glb"></a-gltf-model>
+    <a-gltf-model position="-9.820 1.108 -6.056" rotation="0 0 0" scale="0.087 0.138 0.092" src="3d_models/wshoe1.glb" cursor-listener="pink_sport_shoes"></a-gltf-model>
+    <a-gltf-model position="-11.820 1.108 -6.056" rotation="0 0 0" scale="0.087 0.138 0.092" src="3d_models/wshoe1.glb" cursor-listener="pink_sport_shoes"></a-gltf-model>
 
     <!--right down-->
-    <a-gltf-model position="-10.320 0.499 -6.122" rotation="0 270 0" scale="0.037 0.028 -0.048" src="3d_models/wshoe3.glb"></a-gltf-model>
-    <a-gltf-model position="-10.456 0.362 -5.916" rotation="0 90 0" scale="0.002 0.002 -0.002" src="3d_models/wshoe4.glb"></a-gltf-model>
-    <a-gltf-model position="-12.320 0.499 -6.122" rotation="0 270 0" scale="0.037 0.028 -0.048" src="3d_models/wshoe3.glb"></a-gltf-model>
-    <a-gltf-model position="-12.523 0.362 -5.916" rotation="0 90 0" scale="0.002 0.002 -0.002" src="3d_models/wshoe4.glb"></a-gltf-model>
+    <a-gltf-model position="-10.320 0.499 -6.122" rotation="0 270 0" scale="0.037 0.028 -0.048" src="3d_models/wshoe3.glb" cursor-listener="heels"></a-gltf-model>
+    <a-gltf-model position="-10.456 0.362 -5.916" rotation="0 90 0" scale="0.002 0.002 -0.002" src="3d_models/wshoe4.glb" cursor-listener="pink_sport_shoes"></a-gltf-model>
+    <a-gltf-model position="-12.320 0.499 -6.122" rotation="0 270 0" scale="0.037 0.028 -0.048" src="3d_models/wshoe3.glb" cursor-listener="heels"></a-gltf-model>
+    <a-gltf-model position="-12.523 0.362 -5.916" rotation="0 90 0" scale="0.002 0.002 -0.002" src="3d_models/wshoe4.glb" cursor-listener="pink_sport_shoes"></a-gltf-model>
 
     <!--back shoes up-->
-    <a-gltf-model position="-14.260 2.102 -4.918" rotation="90 0 -90" scale="0.030 0.030 0.020" src="3d_models/bshoe1.glb" ></a-gltf-model>
-    <a-gltf-model position="-14.260 2.102 -2.918" rotation="90 0 -90" scale="0.030 0.030 0.020" src="3d_models/bshoe1.glb" ></a-gltf-model>
-    <a-gltf-model position="-14.260 2.102 -1.018" rotation="90 0 -90" scale="0.030 0.030 0.020" src="3d_models/bshoe1.glb" ></a-gltf-model>
-    <a-gltf-model position="-14.260 2.102 1.018" rotation="90 0 -90" scale="0.030 0.030 0.020" src="3d_models/bshoe1.glb" ></a-gltf-model>
+    <a-gltf-model position="-14.260 2.102 -4.918" rotation="90 0 -90" scale="0.030 0.030 0.020" src="3d_models/bshoe1.glb" cursor-listener="black_sport_shoes"></a-gltf-model>
+    <a-gltf-model position="-14.260 2.102 -2.918" rotation="90 0 -90" scale="0.030 0.030 0.020" src="3d_models/bshoe1.glb" cursor-listener="black_sport_shoes"></a-gltf-model>
+    <a-gltf-model position="-14.260 2.102 -1.018" rotation="90 0 -90" scale="0.030 0.030 0.020" src="3d_models/bshoe1.glb" cursor-listener="black_sport_shoes"></a-gltf-model>
+    <a-gltf-model position="-14.260 2.102 1.018" rotation="90 0 -90" scale="0.030 0.030 0.020" src="3d_models/bshoe1.glb"  cursor-listener="black_sport_shoes"></a-gltf-model>
 
     <!--back shoes middle-->
-    <a-gltf-model position="-14.341 1.366 -5.083" rotation="270 0 -90" scale="1.730 3.180 1.920" src="3d_models/bshoe2.glb" ></a-gltf-model>
-    <a-gltf-model position="-14.341 1.366 -3.083" rotation="270 0 -90" scale="1.730 3.180 1.920" src="3d_models/bshoe2.glb" ></a-gltf-model>
-    <a-gltf-model position="-14.341 1.366 -1.083" rotation="270 0 -90" scale="1.730 3.180 1.920" src="3d_models/bshoe2.glb" ></a-gltf-model>
-    <a-gltf-model position="-14.341 1.366 1.083" rotation="270 0 -90" scale="1.730 3.180 1.920" src="3d_models/bshoe2.glb" ></a-gltf-model>
+    <a-gltf-model position="-14.341 1.366 -5.083" rotation="270 0 -90" scale="1.730 3.180 1.920" src="3d_models/bshoe2.glb" cursor-listener="style_lace_shoes"></a-gltf-model>
+    <a-gltf-model position="-14.341 1.366 -3.083" rotation="270 0 -90" scale="1.730 3.180 1.920" src="3d_models/bshoe2.glb" cursor-listener="style_lace_shoes"></a-gltf-model>
+    <a-gltf-model position="-14.341 1.366 -1.083" rotation="270 0 -90" scale="1.730 3.180 1.920" src="3d_models/bshoe2.glb" cursor-listener="style_lace_shoes"></a-gltf-model>
+    <a-gltf-model position="-14.341 1.366 1.083" rotation="270 0 -90" scale="1.730 3.180 1.920" src="3d_models/bshoe2.glb" cursor-listener="style_lace_shoes"></a-gltf-model>
 
     <!--back shoes down-->
-    <a-gltf-model position="-14.341 0.458 -5.083" rotation="-45 0 -90" scale="2.590 3.430 2.640" src="3d_models/bshoe3.glb" ></a-gltf-model>
-    <a-gltf-model position="-14.341 0.458 -3.083" rotation="-45 0 -90" scale="2.590 3.430 2.640" src="3d_models/bshoe3.glb" ></a-gltf-model>
-    <a-gltf-model position="-14.341 0.458 -1.083" rotation="-45 0 -90" scale="2.590 3.430 2.640" src="3d_models/bshoe3.glb" ></a-gltf-model>
-    <a-gltf-model position="-14.341 0.458 1.083" rotation="-45 0 -90" scale="2.590 3.430 2.640" src="3d_models/bshoe3.glb" ></a-gltf-model>
+    <a-gltf-model position="-14.341 0.458 -5.083" rotation="-45 0 -90" scale="2.590 3.430 2.640" src="3d_models/bshoe3.glb" cursor-listener="style_lace_shoes2"></a-gltf-model>
+    <a-gltf-model position="-14.341 0.458 -3.083" rotation="-45 0 -90" scale="2.590 3.430 2.640" src="3d_models/bshoe3.glb" cursor-listener="style_lace_shoes2"></a-gltf-model>
+    <a-gltf-model position="-14.341 0.458 -1.083" rotation="-45 0 -90" scale="2.590 3.430 2.640" src="3d_models/bshoe3.glb" cursor-listener="style_lace_shoes2"></a-gltf-model>
+    <a-gltf-model position="-14.341 0.458 1.083" rotation="-45 0 -90" scale="2.590 3.430 2.640" src="3d_models/bshoe3.glb" cursor-listener="style_lace_shoes2"></a-gltf-model>
 
     <!--empty stores-->
     <!--rolex watch-->
