@@ -9,9 +9,7 @@
 
 ## Features
 - **Immersive Navigation**: Navigate through a visually stunning and user-friendly interface directly in your web browser.
-- **Personalized Recommendations**: Offers tailored shopping suggestions.
 - **Virtual Try-On**: Allows users to virtually try products before purchase.
-- **Interactive Demonstrations**: Provides detailed product demos for an enhanced shopping experience.
 - **Versatility**: Caters to various industries, making it a comprehensive destination for all shopping needs.
 
 ## Demo
